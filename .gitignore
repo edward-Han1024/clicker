@@ -1,0 +1,7 @@
+.*
+!.gitignore
+.DS_Store
+jquery.js
+ideas
+test
+save
