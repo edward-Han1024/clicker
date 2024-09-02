@@ -1,11 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
   <head>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="./main.js"></script>
   </head>
   <body>
-    <button id = "button">0</button>
+    <main style="display:flex;">
+      <button id = "button" onclick="Game.click()" style="height:300px; width:300px; margin:10px;">0</button>
+      <div id="upgrades">
+        <button id="b1" onclick='Game.buy("b1")''>A cursor Num: <span id="b1num">0</span>, Cost: <span id="b1cos">10</span></button>
+        <button id="b2" onclick='Game.buy("b2")''>A cursor Num: <span id="b2num">0</span>, Cost: <span id="b2cos">100</span></button>
+        <button id="b3" onclick='Game.buy("b3")''>A cursor Num: <span id="b3num">0</span>, Cost: <span id="b3cos">1100</span></button>
+      </div>
+    </main>
     <!--License-->
     <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/edward-Han1024/clicker">Clicker</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/edward-Han1024">Edward Han</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
   </body>
