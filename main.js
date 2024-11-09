@@ -5,34 +5,28 @@ Game.fps = 30;
 Game.num = 0;
 Game.perclick = 1;
 Game.persec = 0;
-Game.pertick = Game.persec/Game.fps;
+Game.time = new Date();
 Game.buildings = {
     b1: {
         num: 0,
         price: function(){
-            return 10*1.15**Game.buildings.b1.num;
+            return 15*1.15**Game.buildings.b1.num;
         },
-        action: function(){
-            Game.persec += 0.1;
-        }
+        amount: 0.1
     },
     b2: {
         num: 0,
         price: function(){
             return 100*1.15**Game.buildings.b2.num;
         },
-        action: function(){
-            Game.persec += 1;
-        }
+        amount: 0.5
     },
     b3: {
         num: 0,
         price: function(){
-            return 1100*1.15**Game.buildings.b3.num;
+            return 800*1.15**Game.buildings.b3.num;
         },
-        action: function(){
-            Game.persec += 8;
-        }
+        amount: 2.5
     }
 };
 // main code:
@@ -60,8 +54,8 @@ Game.buy = function(item){
 };
 Game.update = function(){
     $("button#button").html(Math.floor(Game.num));
-    Game.pertick = Game.persec/Game.fps;
-    Game.num += Game.pertick;
+    Game.num += Game.persec * (new Date() - Game.time) / 1000;
+    Game.time = new Date();
 };
 // start game 
 mainloop = setInterval(Game.update, Math.floor(1000/Game.fps));
